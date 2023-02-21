@@ -6,26 +6,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
-public class Log {
+public class Absence {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime dateTime;
-
-    private String description;
-
     @ManyToOne
     private Student student;
 
     @ManyToOne
-    private Homework homework;
+    private Lesson lesson;
+
+    private Boolean isAbsent;
 }

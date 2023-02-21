@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -18,13 +19,18 @@ import java.util.List;
 @Entity
 public class Student extends User {
 
+    private Float totalGrade;
+
     @OneToMany(mappedBy = "student")
-    private List<Log> logs;
+    private List<Log> logs = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "groups_id")
     private Group group;
 
     @OneToMany(mappedBy = "student")
-    private List<StudentLesson> studentLessons;
+    private List<Grade> grades = new ArrayList<>();
+
+    @OneToMany(mappedBy = "student")
+    private List<Absence> absences = new ArrayList<>();
 }

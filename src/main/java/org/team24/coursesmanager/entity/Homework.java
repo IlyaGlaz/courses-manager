@@ -6,25 +6,31 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
-public class StudentLesson {
+public class Homework {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Student student;
+    private LocalDate date;
+
+    private String description;
+
+    private String file;
 
     @ManyToOne
     private Lesson lesson;
 
-    private Float point;
-
-    private Boolean isAbsent;
+    @OneToMany(mappedBy = "homework")
+    private List<Log> logs = new ArrayList<>();
 }
