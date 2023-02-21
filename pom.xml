@@ -15,7 +15,9 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
         <junit.version>5.9.1</junit.version>
-        <spring.version>6.0.4</spring.version>
+        <spring.version>5.3.18</spring.version>
+        <changelog.path>${project.basedir}\src\main\resources\db.changelog\db.changelog-1.0.sql
+        </changelog.path>
     </properties>
 
     <dependencies>
@@ -95,7 +97,7 @@
                 <version>4.9.1</version>
                 <configuration>
                     <propertyFile>src/main/resources/liquibase.properties</propertyFile>
-                    <changeLogFile>C:\Users\Doc\Programming\pets\courses-manager\src\main\resources\db.changelog\db.changelog-1.0.sql</changeLogFile>
+                    <changeLogFile>${changelog.path}</changeLogFile>
                 </configuration>
             </plugin>
         </plugins>
