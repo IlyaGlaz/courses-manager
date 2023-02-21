@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -34,5 +35,5 @@ public class Group {
     private Teacher teacher;
 
     @OneToMany(mappedBy = "group")
-    private List<Student> students;
+    private List<Student> students = new ArrayList<>();
 }
