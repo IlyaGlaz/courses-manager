@@ -16,8 +16,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <junit.version>5.9.1</junit.version>
         <spring.version>5.3.18</spring.version>
-        <changelog.path>${project.basedir}\src\main\resources\db.changelog\db.changelog-1.0.sql
-        </changelog.path>
+        <changelog.path>${project.basedir}\src\main\resources\db.changelog\db.changelog-1.0.sql</changelog.path>
     </properties>
 
     <dependencies>
@@ -64,6 +63,12 @@
         </dependency>
 
         <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.26</version>
@@ -96,6 +101,7 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>4.9.1</version>
                 <configuration>
+                     <!--Todo: привязать как-ниб значения из application.properties (url, username and password)-->
                     <propertyFile>src/main/resources/liquibase.properties</propertyFile>
                     <changeLogFile>${changelog.path}</changeLogFile>
                 </configuration>
