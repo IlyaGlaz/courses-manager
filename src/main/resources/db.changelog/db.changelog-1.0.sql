@@ -3,15 +3,14 @@
 -- changeset iglaz:1
 CREATE TABLE IF NOT EXISTS users
 (
-    id          BIGSERIAL PRIMARY KEY,
-    birth_date  DATE         NOT NULL,
-    city        VARCHAR(64)  NOT NULL,
-    email       VARCHAR(64)  NOT NULL,
-    total_grade REAL,
-    firstname   VARCHAR(32)  NOT NULL,
-    lastname    VARCHAR(32)  NOT NULL,
-    password    VARCHAR(255) NOT NULL,
-    role        VARCHAR(32)  NOT NULL
+    id         BIGSERIAL PRIMARY KEY,
+    birth_date DATE         NOT NULL,
+    city       VARCHAR(64)  NOT NULL,
+    email      VARCHAR(64)  NOT NULL,
+    firstname  VARCHAR(32)  NOT NULL,
+    lastname   VARCHAR(32)  NOT NULL,
+    password   VARCHAR(255) NOT NULL,
+    role       VARCHAR(32)  NOT NULL
 );
 
 -- changeset iglaz:2
@@ -34,8 +33,9 @@ CREATE TABLE IF NOT EXISTS groups
 -- changeset iglaz:4
 CREATE TABLE IF NOT EXISTS student
 (
-    id        BIGSERIAL PRIMARY KEY REFERENCES users (id),
-    groups_id BIGINT REFERENCES groups (id)
+    id          BIGSERIAL PRIMARY KEY REFERENCES users (id),
+    groups_id   BIGINT REFERENCES groups (id),
+    total_grade REAL
 );
 
 -- changeset iglaz:5
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS log
     date_time   TIMESTAMP,
     description VARCHAR(255) NOT NULL,
     student_id  BIGINT REFERENCES student (id),
-    homework    BIGINT REFERENCES homework (id)
+    homework_id BIGINT REFERENCES homework (id)
 );
 
 -- changeset iglaz:8
