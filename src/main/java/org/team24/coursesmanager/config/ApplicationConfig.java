@@ -10,14 +10,20 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Properties;
 
 @Configuration
-@EnableWebMvc
 @RequiredArgsConstructor
 @ComponentScan("org.team24.coursesmanager")
 @PropertySource("classpath:application.properties")
+@EnableWebMvc
+@EnableSwagger2
 public class ApplicationConfig {
 
     private final Environment env;
@@ -46,5 +52,14 @@ public class ApplicationConfig {
         sessionFactory.setHibernateProperties(hibernateProps);
 
         return sessionFactory;
+    }
+
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build();
     }
 }
