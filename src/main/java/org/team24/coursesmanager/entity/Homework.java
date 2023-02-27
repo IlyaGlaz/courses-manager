@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+//import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,5 +32,5 @@ public class Homework {
     private Lesson lesson;
 
     @OneToMany(mappedBy = "homework")
-    private List<Log> logs = new ArrayList<>();
+    final private List<Log> logs = new ArrayList<>();
 }
