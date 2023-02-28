@@ -31,9 +31,9 @@ public class Group {
 
     private LocalDate finish;
 
-    @ManyToOne
-    private Teacher teacher;
+//    @ManyToOne
+//    private Teacher teacher;
 
     @OneToMany(mappedBy = "group")
-    private List<Student> students = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 }

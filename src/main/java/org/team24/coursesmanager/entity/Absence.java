@@ -19,7 +19,8 @@ public class Absence {
     private Long id;
 
     @ManyToOne
-    private Student student;
+    @JoinColumn(name = "users_id")
+    private User user;
 
     @ManyToOne
     private Lesson lesson;
