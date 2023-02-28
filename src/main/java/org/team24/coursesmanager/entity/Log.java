@@ -24,7 +24,8 @@ public class Log {
     private String description;
 
     @ManyToOne
-    private Student student;
+    @JoinColumn(name ="users_id")
+    private User user;
 
     @ManyToOne
     private Homework homework;
