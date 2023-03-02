@@ -1,55 +1,105 @@
 package org.team24.coursesmanager.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 @Table(name = "users")
-public class User {
+public class User
+        //implements UserDetails
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     private String firstname;
 
-
     private String lastname;
-
     private String email;
-
-    private LocalDate birthDate;
-
-    private String city;
-
     private String password;
 
-    private Float totalGrade;
+    @Column(name = "grades_sum")
+    private float gradesSum;
 
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
-    private List<Log> logs = new ArrayList<>();
+    private List<Token> tokens;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "groups_id")
-    private Group group;
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<StudentLog> logs;
 
-    @OneToMany(mappedBy = "user")
-    private List<Grade> grades = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "absence")
+    private List<Lesson> missedLessons;
 
-    @OneToMany(mappedBy = "user")
-    private List<Absence> absences = new ArrayList<>();
+    @OneToMany
+    private List<StudentGrade> grades;
+
+    @ManyToMany
+    @JoinTable(name = "users_xref_groups")
+    private List<Group> group;
+
+    //@Override
+    //public Collection<? extends GrantedAuthority> getAuthorities() {
+    //    return List.of(new SimpleGrantedAuthority(role.name()));
+    //}
+    //
+    //@Override
+    //public String getPassword() {
+    //    return password;
+    //}
+    //
+    //@Override
+    //public String getUsername() {
+    //    return email;
+    //}
+    //
+    //@Override
+    //public boolean isAccountNonExpired() {
+    //    return true;
+    //}
+    //
+    //@Override
+    //public boolean isAccountNonLocked() {
+    //    return true;
+    //}
+    //
+    //@Override
+    //public boolean isCredentialsNonExpired() {
+    //    return true;
+    //}
+    //
+    //@Override
+    //public boolean isEnabled() {
+    //    return true;
+    //}
 }

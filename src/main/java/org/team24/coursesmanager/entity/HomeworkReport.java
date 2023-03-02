@@ -5,19 +5,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "homeworks")
-public class Homework {
+@Table(name = "homework_reports")
+public class HomeworkReport {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,9 +31,11 @@ public class Homework {
     @Column(name = "editing_time")
     private LocalDateTime editingTime;
 
-    @OneToMany(mappedBy = "homework")
-    private List<Lesson> lessons;
+    @ManyToOne
+    @JoinColumn(name = "homework_id")
+    private Homework homework;
 
-    @OneToMany(mappedBy = "homework")
-    private List<HomeworkReport> homeworkReports;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User student;
 }
