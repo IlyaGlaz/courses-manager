@@ -7,22 +7,22 @@ INSERT INTO groups (id, course, finish, name, start) VALUES (3, 'Java', '2023-03
 INSERT INTO groups (id, course, finish, name, start) VALUES (4, 'Python', '2023-03-22', 'Python group#1', '2023-01-01');
 
 -- changeset bal:2
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (2, '2023-02-18', null, 'city1', 'teach1@mail.ru', 'Teacher1', 'Lastname1', 'teacherpass', 'TEACHER_ROLE', 1);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (3, '2023-02-18', null, 'city2', 'teach2@mail.ru', 'Teacher2', 'Lastname2', 'teacherpass', 'TEACHER_ROLE', 2);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (4, '2023-02-18', null, 'city1', 'teach3@mail.ru', 'Teacher3', 'Lastname3', 'teacherpass', 'TEACHER_ROLE', 3);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (5, '2023-02-18', null, 'city2', 'teach4@mail.ru', 'Teacher4', 'Lastname4', 'teacherpass', 'TEACHER_ROLE', 4);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (6, '2023-02-18', 2, 'city1', 'stud1@mail.ru', 'Student1', 'Фамилия1', 'studentpass', 'STUDENT_ROLE', 1);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (7, '2023-02-18', 5, 'city2', 'stud2@mail.ru', 'Student2', 'Фамилия2', 'studentpass', 'STUDENT_ROLE', 1);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (8, '2023-02-18', 2, 'city3', 'stud3@mail.ru', 'Student3', 'БольшаяФамилия', 'studentpass', 'STUDENT_ROLE', 1);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (9, '2023-02-18', 14, 'city4', 'stud4@mail.ru', 'Student4', 'Фамил', 'studentpass', 'STUDENT_ROLE', 1);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (10, '2023-02-18', 9, 'city1', 'stud5@mail.ru', 'Student5', 'Фамилия1', 'studentpass', 'STUDENT_ROLE', 2);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (11, '2023-02-18', 6, 'city2', 'stud6@mail.ru', 'Student6', 'Фамилия2', 'studentpass', 'STUDENT_ROLE', 2);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (12, '2023-02-18', 7, 'city3', 'stud7@mail.ru', 'Student7', 'БольшаяФамилия', 'studentpass', 'STUDENT_ROLE', 2);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (13, '2023-02-18', 8, 'city4', 'stud8@mail.ru', 'Student8', 'Фамил', 'studentpass', 'STUDENT_ROLE', 2);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (16, '2023-02-18', 0, 'city3', 'stud11@mail.ru', 'Student11', 'БольшаяФамилия', 'studentpass', 'STUDENT_ROLE', 3);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (14, '2023-02-18', 0, 'city1', 'stud9@mail.ru', 'Student9', 'Фамилия1', 'studentpass', 'STUDENT_ROLE', 3);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (15, '2023-02-18', 0, 'city2', 'stud10@mail.ru', 'Student10', 'Фамилия2', 'studentpass', 'STUDENT_ROLE', 3);
-INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (17, '2023-02-18', 0, 'city4', 'stud12@mail.ru', 'Student12', 'Фамил', 'studentpass', 'STUDENT_ROLE', 3);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (2, '2023-02-18', null, 'city1', 'teach1@mail.ru', 'Teacher1', 'Lastname1', 'teacherpass', 'TEACHER', 1);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (3, '2023-02-18', null, 'city2', 'teach2@mail.ru', 'Teacher2', 'Lastname2', 'teacherpass', 'TEACHER', 2);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (4, '2023-02-18', null, 'city1', 'teach3@mail.ru', 'Teacher3', 'Lastname3', 'teacherpass', 'TEACHER', 3);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (5, '2023-02-18', null, 'city2', 'teach4@mail.ru', 'Teacher4', 'Lastname4', 'teacherpass', 'TEACHER', 4);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (6, '2023-02-18', 2, 'city1', 'stud1@mail.ru', 'Student1', 'Фамилия1', 'studentpass', 'STUDENT', 1);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (7, '2023-02-18', 5, 'city2', 'stud2@mail.ru', 'Student2', 'Фамилия2', 'studentpass', 'STUDENT', 1);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (8, '2023-02-18', 2, 'city3', 'stud3@mail.ru', 'Student3', 'БольшаяФамилия', 'studentpass', 'STUDENT', 1);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (9, '2023-02-18', 14, 'city4', 'stud4@mail.ru', 'Student4', 'Фамил', 'studentpass', 'STUDENT', 1);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (10, '2023-02-18', 9, 'city1', 'stud5@mail.ru', 'Student5', 'Фамилия1', 'studentpass', 'STUDENT', 2);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (11, '2023-02-18', 6, 'city2', 'stud6@mail.ru', 'Student6', 'Фамилия2', 'studentpass', 'STUDENT', 2);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (12, '2023-02-18', 7, 'city3', 'stud7@mail.ru', 'Student7', 'БольшаяФамилия', 'studentpass', 'STUDENT', 2);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (13, '2023-02-18', 8, 'city4', 'stud8@mail.ru', 'Student8', 'Фамил', 'studentpass', 'STUDENT', 2);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (16, '2023-02-18', 0, 'city3', 'stud11@mail.ru', 'Student11', 'БольшаяФамилия', 'studentpass', 'STUDENT', 3);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (14, '2023-02-18', 0, 'city1', 'stud9@mail.ru', 'Student9', 'Фамилия1', 'studentpass', 'STUDENT', 3);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (15, '2023-02-18', 0, 'city2', 'stud10@mail.ru', 'Student10', 'Фамилия2', 'studentpass', 'STUDENT', 3);
+INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (17, '2023-02-18', 0, 'city4', 'stud12@mail.ru', 'Student12', 'Фамил', 'studentpass', 'STUDENT', 3);
 
 -- changeset bal:3
 INSERT INTO lesson (id, date_time, subject) VALUES (1, '2023-02-01 00:00:00.000000', 'Java Lesson#1');
