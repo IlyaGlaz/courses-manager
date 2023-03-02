@@ -1,7 +1,4 @@
 spring:
-  mvc:
-    format:
-      date: iso
   liquibase:
     enabled: true
   datasource:

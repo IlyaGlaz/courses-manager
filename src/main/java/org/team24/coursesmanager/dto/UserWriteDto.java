@@ -6,10 +6,13 @@ import org.team24.coursesmanager.entity.Role;
 import java.time.LocalDate;
 
 @Value
-public class UserReadDto {
+public class UserWriteDto {
 
     String firstname;
     String lastname;
     LocalDate birthDate;
+    String email;
     Role role;
+    String password;
+    String city;
 }
