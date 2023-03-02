@@ -30,7 +30,7 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UserReadDto create(@ModelAttribute UserWriteDto user) {
+    public UserReadDto create(UserWriteDto user) {
         return userService.create(user);
     }
 
