@@ -43,7 +43,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Log> logs = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "groups_id")
     private Group group;
 
