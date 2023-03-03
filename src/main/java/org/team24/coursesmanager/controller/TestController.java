@@ -1,27 +1,30 @@
 package org.team24.coursesmanager.controller;
 
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.team24.coursesmanager.dto.GroupDto;
 import org.team24.coursesmanager.dto.UserDto;
+import org.team24.coursesmanager.entity.Group;
 import org.team24.coursesmanager.entity.User;
-import org.team24.coursesmanager.repository.UserRepository;
+import org.team24.coursesmanager.service.GroupService;
+import org.team24.coursesmanager.service.UserService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/test")
+@AllArgsConstructor
 public class TestController {
-
-    @Autowired
     private ModelMapper modelMapper;
-
-    @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
+    private GroupService groupService;
 
     @GetMapping
     public String test() {
@@ -29,25 +32,24 @@ public class TestController {
     }
 
     @GetMapping("/users")
-    @ResponseBody
-    public List<String> getAllUsers() {
-        return userRepository.findAll()
+    public List<UserDto> getAllUsers() {
+        return userService.getAllUsers()
                 .stream()
-                .map(User::getEmail)
+                .map(this::convertToDto)
                 .collect(Collectors.toList());
     }
 
-    //@GetMapping("/users")
-    //@ResponseBody
-    //public List<UserDto> getAllUsers() {
-    //    return userRepository.findAll()
-    //            .stream().peek(System.out::println)
-    //            .map(this::convertToDto).peek(System.out::println)
-    //            .collect(Collectors.toList());
-    //}
+    @GetMapping("/groups/{id}")
+    public ResponseEntity<GroupDto> getGroupById(@PathVariable int id) {
+        Group group = groupService.getById(id);
+        if (group == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(convertToDto(group), HttpStatus.OK);
+    }
 
-    //FIXME: При мапинге все lazy поля entity подгружаются. Почему и зачем.
     private UserDto convertToDto(User user) {
         return modelMapper.map(user, UserDto.class);
+    }
+    private GroupDto convertToDto(Group group) {
+        return modelMapper.map(group, GroupDto.class);
     }
 }
