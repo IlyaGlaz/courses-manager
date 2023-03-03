@@ -23,7 +23,6 @@ INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname
 INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (14, '2023-02-18', 0, 'city1', 'stud9@mail.ru', 'Student9', 'Фамилия1', 'studentpass', 'STUDENT_ROLE', 3);
 INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (15, '2023-02-18', 0, 'city2', 'stud10@mail.ru', 'Student10', 'Фамилия2', 'studentpass', 'STUDENT_ROLE', 3);
 INSERT INTO users (id, birth_date, total_grade, city, email, firstname, lastname, password, role, groups_id) VALUES (17, '2023-02-18', 0, 'city4', 'stud12@mail.ru', 'Student12', 'Фамил', 'studentpass', 'STUDENT_ROLE', 3);
-SELECT SETVAL('users_id_seq', (SELECT MAX(id) FROM users));
 
 -- changeset bal:3
 INSERT INTO lesson (id, date_time, subject) VALUES (1, '2023-02-01 00:00:00.000000', 'Java Lesson#1');

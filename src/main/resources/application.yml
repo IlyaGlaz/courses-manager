@@ -1,10 +1,13 @@
 spring:
+  mvc:
+    format:
+      date: iso
   liquibase:
     enabled: true
   datasource:
-    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
-    username: ${PGUSER}
-    password: ${PGPASSWORD}
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: post
     driver-class-name: org.postgresql.Driver
   jpa:
     open-in-view: false
