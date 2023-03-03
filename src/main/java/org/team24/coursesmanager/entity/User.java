@@ -17,13 +17,11 @@ import java.util.List;
 @Builder
 @Table(name = "users")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String firstname;
-
 
     private String lastname;
 
@@ -43,7 +41,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Log> logs = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "groups_id")
     private Group group;
 

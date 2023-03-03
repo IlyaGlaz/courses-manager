@@ -7,11 +7,8 @@ import org.team24.coursesmanager.entity.User;
 import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository <User, Long> {
-    @Query(value = "SELECT * FROM users WHERE role = 'STUDENT'",
-            nativeQuery = true)
+    @Query(value = "FROM User where role = 'STUDENT'")
     List<User> findRoleStudent();
-
-    @Query(value = "SELECT * FROM users WHERE role = 'TEACHER'",
-            nativeQuery = true)
+    @Query(value = "FROM User where role = 'TEACHER'")
     List<User> findRoleTeacher();
 }
