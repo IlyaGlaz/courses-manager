@@ -14,11 +14,9 @@ public class UserWriteMapper implements Mapper<UserWriteDto, User> {
         User user = new User();
         user.setFirstname(object.getFirstname());
         user.setLastname(object.getLastname());
-        user.setBirthDate(object.getBirthDate());
         user.setEmail(object.getEmail());
         user.setRole(object.getRole());
         user.setPassword(object.getPassword());
-        user.setCity(object.getCity());
 
         return user;
     }

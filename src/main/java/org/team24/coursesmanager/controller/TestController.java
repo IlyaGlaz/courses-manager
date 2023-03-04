@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.team24.coursesmanager.dto.GroupDto;
 import org.team24.coursesmanager.dto.UserDto;
+import org.team24.coursesmanager.dto.UserReadDto;
 import org.team24.coursesmanager.entity.Group;
 import org.team24.coursesmanager.entity.User;
 import org.team24.coursesmanager.service.GroupService;
 import org.team24.coursesmanager.service.UserService;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/test")
@@ -32,11 +32,8 @@ public class TestController {
     }
 
     @GetMapping("/users")
-    public List<UserDto> getAllUsers() {
-        return userService.getAllUsers()
-                .stream()
-                .map(this::convertToDto)
-                .collect(Collectors.toList());
+    public List<UserReadDto> getAllUsers() {
+        return userService.findAll();
     }
 
     @GetMapping("/groups/{id}")
