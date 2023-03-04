@@ -11,4 +11,6 @@ public interface UserRepository extends JpaRepository <User, Long> {
     List<User> findRoleStudent();
     @Query(value = "FROM User where role = 'TEACHER'")
     List<User> findRoleTeacher();
+    @Query(value = "FROM User where groups_id = :id")
+    List<User> listGroup(Long id);
 }

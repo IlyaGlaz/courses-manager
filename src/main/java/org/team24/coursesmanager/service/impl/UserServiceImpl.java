@@ -4,10 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-<<<<<<< HEAD
+import org.team24.coursesmanager.Mapper.UserMapper;
 import org.team24.coursesmanager.dto.UserDTO;
-=======
->>>>>>> d0949de10231ab6e5447b9ca8f64b205e8c41c58
 import org.team24.coursesmanager.entity.User;
 import org.team24.coursesmanager.repository.UserRepository;
 import org.team24.coursesmanager.service.UserService;
@@ -18,10 +16,11 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-<<<<<<< HEAD
     private UserRepository userRepository;
     @Autowired
     private ModelMapper modelMapper;
+//    @Autowired
+//    private UserMapper userMapper;
     @Override
     public List<UserDTO> getAllStudent() {
         List<User> users = userRepository.findRoleStudent();
@@ -42,20 +41,25 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
     public boolean delete(Long id) {
-        if (userRepository.findById(id).isEmpty()){
+        if (userRepository.findById(id).isEmpty()) {
             return false;
         }
         userRepository.deleteById(id);
         return true;
-=======
-    UserRepository userRepository;
-    @Override
-    public List<User> getAllStudent() {
-        return userRepository.findRoleStudent();
     }
     @Override
-    public List<User> getAllTeacher() {
-        return userRepository.findRoleTeacher();
->>>>>>> d0949de10231ab6e5447b9ca8f64b205e8c41c58
+    public List<User> listGroup(Long id) {
+        return userRepository.listGroup(id);
     }
+
+    // MapStruct
+    @Override
+    public List<UserDTO> getAllStudentMapStruct() {
+//        List<User> users = userRepository.findRoleStudent();
+//        return users.stream().map((user) -> userMapper.userToUserDTO(user))
+//                .collect(Collectors.toList());
+    return null;
+    }
+
+
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 public class RandomUser {
-    static List<String> randomUser(List<User> userList){
+    public List<String> randomUser(List<User> userList){
 
         if (userList == null) return null;
 

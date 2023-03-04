@@ -9,4 +9,10 @@ public interface UserService {
     UserDTO findById(Long id);
     void create(User user);
     boolean delete(Long id);
+    List<User> listGroup(Long id);
+
+
+
+    // MapStruct
+    public List<UserDTO> getAllStudentMapStruct();
 }
