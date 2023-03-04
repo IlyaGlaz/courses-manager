@@ -1,11 +1,11 @@
 -- liquibase formatted sql
 
 -- changeset bal:9
-INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('pizzzadog@mail.com', 'Nikolai', null, null, 'password', 'TEACHER');
-INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('sergey@mail.com', 'Sergey', 10, null, 'password', 'STUDENT');
-INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('serega@mail.com', 'Sergey', 10, null, 'password', 'STUDENT');
-INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('ilia@mail.com', 'Ilia', 10, null, 'password', 'STUDENT');
-INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('bal@mail.com', 'Pavel', 10, 'Bal', 'password', 'STUDENT');
+INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('pizzzadog@mail.com', 'Nikolai', null, null, 'password', 'TEACHER_ROLE');
+INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('sergey@mail.com', 'Sergey', 10, null, 'password', 'STUDENT_ROLE');
+INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('serega@mail.com', 'Sergey', 10, null, 'password', 'STUDENT_ROLE');
+INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('ilia@mail.com', 'Ilia', 10, null, 'password', 'STUDENT_ROLE');
+INSERT INTO users (email, firstname, grades_sum, lastname, password, role) VALUES ('bal@mail.com', 'Pavel', 10, 'Bal', 'password', 'STUDENT_ROLE');
 
 -- changeset bal:10
 INSERT INTO courses (name) VALUES ('Java');
