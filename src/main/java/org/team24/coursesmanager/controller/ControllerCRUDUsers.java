@@ -13,8 +13,6 @@ import java.util.List;
 public class ControllerCRUDUsers {
     @Autowired
     UserService userService;
-    //@Autowired
-    RandomUser randomUser = new RandomUser();
     @GetMapping("/student")
     public List<UserDTO> getAllStudent() {
         System.out.println(userService.getAllStudent());
@@ -36,14 +34,6 @@ public class ControllerCRUDUsers {
     public boolean deleteUser(@PathVariable("id") Long id) {
         return userService.delete(id);
     }
-    @GetMapping("/randomGroup/{id}")
-    public List<String> listGroup(@PathVariable("id") Long id){
-        return randomUser.randomUser(userService.listGroup(id));
-    }
-
-
-
-
 
     // MapStruct
     @GetMapping("/studentmapstruct")

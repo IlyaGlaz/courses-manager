@@ -22,11 +22,11 @@ public class RandomUser {
 
         for (int i = 0; i < newUserAfterRandom.size(); i++){                        // пары Users
             if ((i + 1) == newUserAfterRandom.size()){
-                listUsers.add(newUserAfterRandom.get(i).getFirstname() + " " + newUserAfterRandom.get(i).getLastname() + "< --- >"
+                listUsers.add(newUserAfterRandom.get(i).getFirstname() + " " + newUserAfterRandom.get(i).getLastname() + "   < --- >   "
                         + newUserAfterRandom.get(0).getFirstname() + " " + newUserAfterRandom.get(0).getLastname());
             }
             else {
-                listUsers.add(newUserAfterRandom.get(i).getFirstname() + " " + newUserAfterRandom.get(i).getLastname() + "< --- >"
+                listUsers.add(newUserAfterRandom.get(i).getFirstname() + " " + newUserAfterRandom.get(i).getLastname() + "   < --- >   "
                         + newUserAfterRandom.get(i + 1).getFirstname() + " " + newUserAfterRandom.get(i + 1).getLastname());
             }
         }
