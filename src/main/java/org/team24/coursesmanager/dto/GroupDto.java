@@ -15,5 +15,5 @@ public class GroupDto {
     String name;
     Date beginDate;
     Date endDate;
-    List<UserDto> users;
+    List<UserReadDto> users;
 }

@@ -1,4 +1,4 @@
-package org.team24.coursesmanager.service;
+package org.team24.coursesmanager.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

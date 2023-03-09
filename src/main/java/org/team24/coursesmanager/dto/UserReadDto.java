@@ -1,11 +1,16 @@
 package org.team24.coursesmanager.dto;
 
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.team24.coursesmanager.entity.Role;
 
-@Value
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserReadDto {
-
     long id;
     String firstname;
     String lastname;
