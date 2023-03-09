@@ -1,17 +1,19 @@
 package org.team24.coursesmanager.dto;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 public class GroupDto {
-    private int id;
-    private String name;
-    private Date beginDate;
-    private Date endDate;
-    private List<UserDto> users;
+    int id;
+    String name;
+    Date beginDate;
+    Date endDate;
+    List<UserDto> users;
 }
