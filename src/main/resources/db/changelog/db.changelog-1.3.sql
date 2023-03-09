@@ -57,3 +57,6 @@ INSERT INTO users_xref_groups (users_id, group_id) VALUES (5, 1);
 
 -- changeset bal:18
 INSERT INTO absence (user_id, missed_lessons_id) VALUES (2, 2);
+
+--changeset bal:19
+ALTER TABLE users ALTER COLUMN id TYPE bigint
