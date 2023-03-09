@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.team24.coursesmanager.security.JWTUtil;
-import org.team24.coursesmanager.services.PersonDetailsService;
+import org.team24.coursesmanager.service.PersonDetailsService;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
