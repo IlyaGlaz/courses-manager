@@ -65,7 +65,7 @@ public class AuthController {
 
         registrationService.register(user);
 
-        String token = jwtUtil.generateToken(user.getUsername());
+        String token = jwtUtil.generateToken(user.getEmail());
         return Map.of("jwt-token", token);
     }
 

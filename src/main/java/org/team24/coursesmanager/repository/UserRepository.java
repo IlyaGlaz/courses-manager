@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import org.team24.coursesmanager.entity.User;
 
 import java.util.List;
+import java.util.Optional;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "FROM User where role = 'STUDENT'")
@@ -14,4 +16,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findRoleTeacher();
     @Query(value = "FROM User where groups_id = :id")
     List<User> listGroup(Long id);
+    Optional<User> findByEmail(String email);
 }

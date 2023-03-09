@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.team24.coursesmanager.entity.User;
-import org.team24.coursesmanager.repositiries.UserRepository;
+import org.team24.coursesmanager.repository.UserRepository;
 import org.team24.coursesmanager.security.PersonDetails;
 
 import java.util.Optional;
@@ -23,7 +23,7 @@ public class PersonDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> user = userRepository.findByUsername(username);
+        Optional<User> user = userRepository.findByEmail(username);
 
         if (user.isEmpty())
             throw new UsernameNotFoundException("User not found");

@@ -5,8 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.team24.coursesmanager.entity.Role;
 import org.team24.coursesmanager.entity.User;
-import org.team24.coursesmanager.repositiries.UserRepository;
+import org.team24.coursesmanager.repository.UserRepository;
 
 @Service
 public class RegistrationService {
@@ -23,7 +24,7 @@ public class RegistrationService {
     @Transactional
     public void register(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole("ROLE_STUDENT");
+        user.setRole(Role.STUDENT_ROLE);
         userRepository.save(user);
     }
 }
