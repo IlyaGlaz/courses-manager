@@ -31,15 +31,9 @@ public class StudentLogService {
         StudentLog log = new StudentLog();
         log.setText(text);
         log.setPublishingTime(LocalDateTime.now());
+        log.setUser(user);
 
-        user.addLog(log);
-
-        userRepository.flush();
-        //logRepository.save(log);
-        //userRepository.flush();
-        //logRepository.flush();
-
-        return 9999L;
+        return logRepository.saveAndFlush(log).getId();
     }
 
     public List<StudentLogReadDto> getStudentLogs(long userId) {
