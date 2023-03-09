@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.team24.coursesmanager.dto.GroupDto;
-import org.team24.coursesmanager.dto.UserDto;
 import org.team24.coursesmanager.dto.UserReadDto;
 import org.team24.coursesmanager.entity.Group;
 import org.team24.coursesmanager.entity.User;
@@ -26,9 +25,9 @@ import java.util.List;
 @RequestMapping("/api/test")
 @AllArgsConstructor
 public class TestController {
-    private ModelMapper modelMapper;
-    private UserService userService;
-    private GroupService groupService;
+    private final ModelMapper modelMapper;
+    private final UserService userService;
+    private final GroupService groupService;
 
     @GetMapping
     public String test() {
@@ -45,10 +44,6 @@ public class TestController {
         Group group = groupService.getById(id);
         if (group == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(convertToDto(group), HttpStatus.OK);
-    }
-
-    private UserDto convertToDto(User user) {
-        return modelMapper.map(user, UserDto.class);
     }
 
     private GroupDto convertToDto(Group group) {
