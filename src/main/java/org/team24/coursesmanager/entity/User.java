@@ -28,7 +28,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String firstname;
     private String lastname;
     private String email;
@@ -57,4 +57,8 @@ public class User {
     @ManyToMany
     @JoinTable(name = "users_xref_groups")
     private List<Group> group;
+
+    public boolean addLog(StudentLog studentLog) {
+        return logs.add(studentLog);
+    }
 }
