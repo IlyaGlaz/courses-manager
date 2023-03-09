@@ -1,16 +1,17 @@
 package org.team24.coursesmanager.dto;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 public class UserDto {
-    private int id;
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String password;
-    private Float gradesSum;
-    private String role;
+    int id;
+    String firstname;
+    String lastname;
+    String email;
+    Float gradesSum;
+    String role;
 }
