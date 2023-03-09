@@ -1,11 +1,14 @@
 package org.team24.coursesmanager.dto;
 
-import lombok.Value;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.team24.coursesmanager.entity.Role;
 
-@Value
+@Setter
+@Getter
+@NoArgsConstructor
 public class UserWriteDto {
-
     String firstname;
     String lastname;
     String email;

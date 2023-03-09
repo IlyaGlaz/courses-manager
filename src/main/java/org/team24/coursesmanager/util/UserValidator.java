@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.team24.coursesmanager.entity.User;
-import org.team24.coursesmanager.service.PersonDetailsService;
+import org.team24.coursesmanager.security.PersonDetailsService;
 
 @Component
 public class UserValidator implements Validator {
