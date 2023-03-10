@@ -1,6 +1,6 @@
-package org.glaz.network.integration;
+package org.team24.coursesmanager.integration;
 
-import org.glaz.network.integration.annotation.IT;
+import org.team24.coursesmanager.integration.annotation.IT;
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;

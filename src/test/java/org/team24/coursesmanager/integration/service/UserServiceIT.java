@@ -1,7 +1,7 @@
-package org.glaz.network.integration.service;
+package org.team24.coursesmanager.integration.service;
 
 import lombok.RequiredArgsConstructor;
-import org.glaz.network.integration.IntegrationTestBase;
+import org.team24.coursesmanager.integration.IntegrationTestBase;
 import org.junit.jupiter.api.Test;
 import org.team24.coursesmanager.dto.UserReadDto;
 import org.team24.coursesmanager.service.UserService;

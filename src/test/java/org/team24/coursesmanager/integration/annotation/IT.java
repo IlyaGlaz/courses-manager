@@ -1,4 +1,4 @@
-package org.glaz.network.integration.annotation;
+package org.team24.coursesmanager.integration.annotation;
 
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
