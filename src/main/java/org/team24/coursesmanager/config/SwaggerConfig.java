@@ -48,11 +48,11 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "My REST API",
-                "Some custom description of API.",
+                "Courses Manager API",
+                "API for managing courses ☻",
                 "1.0",
                 "Terms of service",
-                new Contact("Sallo Szrajbman", "www.baeldung.com", "salloszraj@gmail.com"),
+                new Contact("Dev Name", "www.baeldung.com", "devname@gmail.com"),
                 "License of API",
                 "API license URL",
                 Collections.emptyList());
