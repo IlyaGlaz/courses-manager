@@ -11,6 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.team24.coursesmanager.security.JWTFilter;
 import org.team24.coursesmanager.security.PersonDetailsService;
 
 
@@ -31,7 +32,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/admin").hasRole("TEACHER")
-                .antMatchers("/auth/login", "/auth/registration", "/error", "/**/test/**").permitAll()
+                .antMatchers("/auth/login", "/auth/registration", "/error",
+                        "/**/test/**",
+                        "/**/api-docs", "/swagger-*/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
