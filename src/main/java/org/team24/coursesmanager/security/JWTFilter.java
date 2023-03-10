@@ -1,4 +1,4 @@
-package org.team24.coursesmanager.config;
+package org.team24.coursesmanager.security;
 
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
@@ -7,8 +7,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import org.team24.coursesmanager.security.JWTUtil;
-import org.team24.coursesmanager.security.PersonDetailsService;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
