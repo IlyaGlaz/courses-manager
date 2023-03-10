@@ -2,5 +2,8 @@ package org.team24.coursesmanager.entity;
 
 public enum Role {
 
-    TEACHER, STUDENT, MANAGER
+    STUDENT_ROLE,
+    TEACHER_ROLE,
+    MANAGER_ROLE,
+    ADMIN_ROLE
 }

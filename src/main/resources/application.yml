@@ -1,13 +1,10 @@
 spring:
-  mvc:
-    format:
-      date: iso
   liquibase:
     enabled: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: post
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     open-in-view: false
@@ -15,5 +12,3 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-        hbm2ddl:
-          auto: validate
